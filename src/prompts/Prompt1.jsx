@@ -5,11 +5,13 @@ const Prompt1 = () => {
   return (
     <>
         <p>Have you eaten in the past 6 hours?</p>
-        <Link to={"/question2"}>Yes. Next question!</Link>
-        <Link to={"/question1/response1"}>I could use a snack</Link>
-        <Link to={"/question1/response2"}>No, I need a meal.</Link>
+        <div>
+          <Link to={"/prompt2"}>Yes. Next question!</Link>
+          <Link to={"/prompt1/response1"}>I could use a snack</Link>
+          <Link to={"/prompt1/response2"}>No, I need a meal.</Link>
+        </div>
     </>
   )
 }
 
-export default Question1
+export default Prompt1

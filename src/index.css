@@ -22,7 +22,8 @@ a {
   transition-duration: .3s;
 }
 a:hover {
-  color: #a0dcff;
+  color: #67c6fd;
+  cursor: pointer;
 }
 
 body {

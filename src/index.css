@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Merriweather, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -15,7 +17,7 @@
 }
 
 a {
-  font-weight: 500;
+  font-weight: 700;
   color: #434cff;
   text-decoration: inherit;
   width: fit-content;
@@ -24,6 +26,10 @@ a {
 a:hover {
   color: #67c6fd;
   cursor: pointer;
+}
+
+p {
+  font-weight: 400;
 }
 
 body {

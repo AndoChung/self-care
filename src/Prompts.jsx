@@ -1,42 +1,66 @@
 import React, { useState } from "react";
 
+const pathHistory = [];
+
 const Prompts = () => {
     const promptTexts = {
         start: (
             <>
                 <p>
                     This is meant to be an interactive flow chart for people who
-                    struggle with self care, executive dysfunction, and/or who
-                    have trouble reading internal signals. It's designed to take
-                    as much of the weight off of you as possible, so each
+                    might find self care, managing executive dysfunction, or
+                    understanding internal cues challenging. It's designed to
+                    take as much of the weight off of you as possible, so each
                     decision is very easy and doesn't require much judgment.
                 </p>
                 <p>
-                    Set aside some time--maybe an hour total- to allow yourself
-                    to work through each step. Don't rush or skip ahead--just
-                    follow the directions. Self care is important, and you
-                    deserve to devote some time to it.
+                    Why not reserve some time, perhaps about an hour in total,
+                    to comfortably work your way through each step? Let's take
+                    it easy, no need to hurry or skip ahead--just follow the
+                    directions. Remember, self-care is a must, and you
+                    absolutely deserve some dedicated time for it.
                 </p>
                 <p>
-                    You may want to go through this routine as soon as you wake
-                    up, as a preventative measure.
+                    As a helpful tip, consider making this routine a part of
+                    your daily routine for that extra boost of self-care right
+                    from the get-go!
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p1"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p1"]);
+                        pathHistory.push("start");
+                    }}
+                >
                     I'm ready for the first question.
                 </a>
             </>
         ),
-        "p1": (
+        p1: (
             <>
                 <p>Have you eaten in the past 6 hours?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p2"]);
+                            pathHistory.push("p1");
+                        }}
+                    >
                         Yes. Next question!
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p1.1"])}>
-                        I could use a snack
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p1.1"]);
+                            pathHistory.push("p1");
+                        }}
+                    >
+                        I could use a snack.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p1.2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p1.2"]);
+                            pathHistory.push("p1");
+                        }}
+                    >
                         No, I need a meal.
                     </a>
                 </div>
@@ -49,14 +73,20 @@ const Prompts = () => {
                     mouth.
                 </p>
                 <p>
-                    If there's a specific food you want, it's okay to eat it!
-                    You don't have to eat perfectly healthy all the time-- no
-                    one does! Just also use your brain a little, and notice the
-                    quantity you're eating, and how healthy it is for you.
-                    You're probably just fine at trusting your gut and knowing
-                    what your body needs.
+                    If there's a particular food you're craving, it's totally
+                    okay to enjoy it! You don't have to be perfect, only eating
+                    healthy all the time-- no one does! Just remember to be a
+                    little mindful when it comes to the portion size and how
+                    nutritious it is for you. You're most likely pretty good at
+                    listening to your intuition and knowing what your body
+                    needs.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p2"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p2"]);
+                        pathHistory.push("p1.1");
+                    }}
+                >
                     Okay, I finished my snack.
                 </a>
             </>
@@ -68,26 +98,42 @@ const Prompts = () => {
                     fuel. It's time for breakfast, lunch, or dinner.
                 </p>
                 <p>
-                    If there's a specific food you want, it's okay to eat it!
-                    You don't have to eat perfectly healthy all the time-- no
-                    one does! Just also use your brain a little, and notice the
-                    quantity you're eating, and how healthy it is for you.
-                    You're probably just fine at trusting your gut and knowing
-                    what your body needs.
+                    If there's a particular food you're craving, it's totally
+                    okay to enjoy it! You don't have to be perfect, only eating
+                    healthy all the time-- no one does! Just remember to be a
+                    little mindful when it comes to the portion size and how
+                    nutritious it is for you. You're most likely pretty good at
+                    listening to your intuition and knowing what your body
+                    needs.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p2"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p2"]);
+                        pathHistory.push("p1.2");
+                    }}
+                >
                     I finished my meal, and I'm ready for the next step!
                 </a>
             </>
         ),
-        "p2": (
+        p2: (
             <>
                 <p>Have you taken any medication you need to take?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p3"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p3"]);
+                            pathHistory.push("p2");
+                        }}
+                    >
                         Yes, I'm all caught up on any medication I need to take.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p2.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p2.1"]);
+                            pathHistory.push("p2");
+                        }}
+                    >
                         No, I need to take my pill.
                     </a>
                 </div>
@@ -109,12 +155,17 @@ const Prompts = () => {
                     a smart phone alarm so you remember to take it at the same
                     time every day.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p3"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p3"]);
+                        pathHistory.push("p2.1");
+                    }}
+                >
                     Okay, I took my medication. Next Question!
                 </a>
             </>
         ),
-        "p3": (
+        p3: (
             <>
                 <p>
                     Drink a glass of whatever liquid you like best. Water is
@@ -122,19 +173,34 @@ const Prompts = () => {
                     soda, juice, or milk. Soda will actually make you feel
                     thirstier, but if it's easier for you, then that's okay!
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p4"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p4"]);
+                        pathHistory.push("p3");
+                    }}
+                >
                     Okay, I did it.
                 </a>
             </>
         ),
-        "p4": (
+        p4: (
             <>
                 <p>Are you in pain?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p5"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p5"]);
+                            pathHistory.push("p4");
+                        }}
+                    >
                         No, my body feels fine.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p4.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p4.1"]);
+                            pathHistory.push("p4");
+                        }}
+                    >
                         Yes, something hurts.
                     </a>
                 </div>
@@ -159,12 +225,17 @@ const Prompts = () => {
                     pain with some pleasant alternative sensations, like good
                     smells and pleasurable textures.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p5"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p5"]);
+                        pathHistory.push("p4.1");
+                    }}
+                >
                     I am all taken care of.
                 </a>
             </>
         ),
-        "p5": (
+        p5: (
             <>
                 <p>
                     Can you take a guess at how many hours you've slept out of
@@ -177,10 +248,20 @@ const Prompts = () => {
                     and/or had nightmares, it might help you to take a nap.
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p6"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p6"]);
+                            pathHistory.push("p5");
+                        }}
+                    >
                         I am well-rested. Next question!
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p5.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p5.1"]);
+                            pathHistory.push("p5");
+                        }}
+                    >
                         I need a nap.
                     </a>
                 </div>
@@ -199,12 +280,17 @@ const Prompts = () => {
                     and get yourself together between your nap and your
                     responsibilities.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p6"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p6"]);
+                        pathHistory.push("p5.1");
+                    }}
+                >
                     Okay, I'm well-rested now.
                 </a>
             </>
         ),
-        "p6": (
+        p6: (
             <>
                 <p>
                     Next we're going to deal with other types of physical
@@ -214,22 +300,42 @@ const Prompts = () => {
                     Is something about your environment distressing or
                     uncomfortable?
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p7"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p7"]);
+                        pathHistory.push("p6");
+                    }}
+                >
                     Let's continue!
                 </a>
             </>
         ),
-        "p7": (
+        p7: (
             <>
                 <p>Are your surroundings the right temperature?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p7.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p7.1"]);
+                            pathHistory.push("p7");
+                        }}
+                    >
                         I'm too cold.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p7.2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p7.2"]);
+                            pathHistory.push("p7");
+                        }}
+                    >
                         I'm too hot.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p8"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p8"]);
+                            pathHistory.push("p7");
+                        }}
+                    >
                         I'm just right.
                     </a>
                 </div>
@@ -243,7 +349,12 @@ const Prompts = () => {
                     home, putting on a blanket, and/or snuggling with a pet or
                     another person.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p8"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p8"]);
+                        pathHistory.push("p7.1");
+                    }}
+                >
                     I'm not cold anymore.
                 </a>
             </>
@@ -256,19 +367,34 @@ const Prompts = () => {
                     home, putting on a blanket, and/or snuggling with a pet or
                     another person.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p8"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p8"]);
+                        pathHistory.push("p7.2");
+                    }}
+                >
                     I'm not cold anymore.
                 </a>
             </>
         ),
-        "p8": (
+        p8: (
             <>
                 <p>Are your surroundings dirty or smelly?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p8.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p8.1"]);
+                            pathHistory.push("p8");
+                        }}
+                    >
                         Yes, it's gross.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p9"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p9"]);
+                            pathHistory.push("p8");
+                        }}
+                    >
                         No, it's fine.
                     </a>
                 </div>
@@ -287,26 +413,46 @@ const Prompts = () => {
                     we're doing here. We're just taking a little five-minute
                     clean up to make ourselves and our homes happier!
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p9"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p9"]);
+                        pathHistory.push("p8.1");
+                    }}
+                >
                     Okay, I cleaned up a little!
                 </a>
             </>
         ),
-        "p9": (
+        p9: (
             <>
                 <p>
                     Do you feel unsafe because of the people, or lack of people,
                     in your surroundings?
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p9.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p9.1"]);
+                            pathHistory.push("p9");
+                        }}
+                    >
                         Yes, there are too many people here, or people I don't
                         feel comfortable with.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p9.2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p9.2"]);
+                            pathHistory.push("p9");
+                        }}
+                    >
                         I am alone and I don't like it.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p10"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p10"]);
+                            pathHistory.push("p9");
+                        }}
+                    >
                         No, I'm good.
                     </a>
                 </div>
@@ -319,7 +465,12 @@ const Prompts = () => {
                     overwhelming or feel unsafe. If you can't relocate entirely,
                     take frequent breaks, or tune out with headphones.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p10"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p10"]);
+                        pathHistory.push("p9.1");
+                    }}
+                >
                     I did my best. On to the next step.
                 </a>
             </>
@@ -333,20 +484,35 @@ const Prompts = () => {
                     playing with a pet, and/or turning on the TV or music can
                     help.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p10"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p10"]);
+                        pathHistory.push("p9.2");
+                    }}
+                >
                     I reached out to someone and I'm feeling better. I'm ready
                     for the next step.
                 </a>
             </>
         ),
-        "p10": (
+        p10: (
             <>
                 <p>Does your body feel uncomfortable, sweaty, or dirty?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p10.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p10.1"]);
+                            pathHistory.push("p10");
+                        }}
+                    >
                         Yes, I feel icky, gross, or unclean.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p11"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p11"]);
+                            pathHistory.push("p10");
+                        }}
+                    >
                         No, I feel fine.
                     </a>
                 </div>
@@ -355,12 +521,17 @@ const Prompts = () => {
         "p10.1": (
             <>
                 <p>Do you have the energy and ability to take a shower?</p>
-                <a onClick={() => setPrompt(promptTexts["p11"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p11"]);
+                        pathHistory.push("p10.1");
+                    }}
+                >
                     Yes, I'll take a shower.
                 </a>
             </>
         ),
-        "p11": (
+        p11: (
             <>
                 <p>
                     Now we've taken care of the physical reasons that you're not
@@ -384,10 +555,20 @@ const Prompts = () => {
                     emotionally? (Remember, any answer is okay!)
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p11.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p11.1"]);
+                            pathHistory.push("p11");
+                        }}
+                    >
                         Yes, there's something on my mind.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p11.2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p11.2"]);
+                            pathHistory.push("p11");
+                        }}
+                    >
                         No, I don't know the reason.
                     </a>
                 </div>
@@ -410,7 +591,12 @@ const Prompts = () => {
                     together. We're just taking baby steps in the right
                     direction.
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p12"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p12"]);
+                        pathHistory.push("p11.1");
+                    }}
+                >
                     Okay, I did my best.
                 </a>
             </>
@@ -421,26 +607,109 @@ const Prompts = () => {
                     Sometimes, we don't know the source of our bad feelings, and
                     that's okay. We're gonna work through this together!
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p12"])}>Okay!</a>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p12"]);
+                        pathHistory.push("p11.2");
+                    }}
+                >
+                    Okay!
+                </a>
             </>
         ),
-        "pg": (
+        pg: (
             <>
                 <p>Here are some ideas for grounding activities:</p>
+                <ul>
+                    <li>Take deep, calm breaths.</li>
+                    <li>Notice and list things in your surroundings.</li>
+                    <li>
+                        Expose yourself to strong, pleasant sensations, like a
+                        pleasing smell or a favorite blanket.
+                    </li>
+                    <li>
+                        Say out loud your name, your age, the date, and your
+                        location. List some things you've done today, or are
+                        going to do.
+                    </li>
+                    <li>
+                        Splash water on your face or run your hands under the
+                        faucet.
+                    </li>
+
+                    <li>
+                        Make tea. Feel the warmth of it in your hands, and the
+                        taste as you sip it calmly.
+                    </li>
+
+                    <li>Listen to music.</li>
+                    <li>Write in your journal.</li>
+                    <li>
+                        Take a mindful walk, either inside or outside. Pay close
+                        attention to your body and your surroundings.
+                    </li>
+                    <li>
+                        Squiggle. Wiggle around. Dance. Stretch. Be silly and
+                        active for a few minutes.
+                    </li>
+                    <li>
+                        Any other favorite grounding technique you've heard of
+                        or can think of. There's nothing wrong with
+                        experimenting!
+                    </li>
+                </ul>
+                <a onClick={() => {
+                    let previousPage = pathHistory[pathHistory.length - 1];
+                    let nextPage = ""
+                    switch (previousPage) {
+                        case "p12.1":
+                            nextPage = "p13";
+                            break;
+                        case "p12.2":
+                            nextPage = "p13";
+                            break;
+                        case "p13.1":
+                            nextPage = "p14";
+                            break;
+                        case "p14":
+                            nextPage = "p15";
+                            break;
+                    }
+                    setPrompt(promptTexts[nextPage]);
+                    pathHistory.push("pg");
+                }}>
+                    Okay! I did one or more of these things, and I'm ready to
+                    move on.
+                </a>
             </>
         ),
 
-        "p12": (
+        p12: (
             <>
                 <p></p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p12.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p12.1"]);
+                            pathHistory.push("p12");
+                        }}
+                    >
                         Yes, I feel anxious about something specific.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p12.2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p12.2"]);
+                            pathHistory.push("p12");
+                        }}
+                    >
                         Yes, but I don't know why.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p13"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p13"]);
+                            pathHistory.push("p12");
+                        }}
+                    >
                         No, I don't feel very anxious.
                     </a>
                 </div>
@@ -459,10 +728,20 @@ const Prompts = () => {
                     not in your control, try some grounding exercises as well!
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts[""])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["pg"]);
+                            pathHistory.push("p12.1");
+                        }}
+                    >
                         I'd like to try some grounding exercises too.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p13"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p13"]);
+                            pathHistory.push("p12.1");
+                        }}
+                    >
                         I feel better. Next question!
                     </a>
                 </div>
@@ -475,12 +754,17 @@ const Prompts = () => {
                     okay!
                 </p>
 
-                <a onClick={() => setPrompt(promptTexts["p13"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["pg"]);
+                        pathHistory.push("p12.2");
+                    }}
+                >
                     I'd like to try some grounding exercises too.
                 </a>
             </>
         ),
-        "p13": (
+        p13: (
             <>
                 <p>
                     Do you feel triggered? Are you having flashbacks? Is
@@ -488,10 +772,20 @@ const Prompts = () => {
                     your mind? Did you have a vivid nightmare?
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p13.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p13.1"]);
+                            pathHistory.push("p13");
+                        }}
+                    >
                         Yes, I feel triggered.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p14"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p14"]);
+                            pathHistory.push("p13");
+                        }}
+                    >
                         No, I'm not feeling triggered.
                     </a>
                 </div>
@@ -515,16 +809,26 @@ const Prompts = () => {
                     some grounding exercises to reinforce that idea.
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts[""])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["pg"]);
+                            pathHistory.push("p13.1");
+                        }}
+                    >
                         I'd like to try some grounding exercises too.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p14"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p14"]);
+                            pathHistory.push("p13.1");
+                        }}
+                    >
                         Okay, I'm ready for the next question.
                     </a>
                 </div>
             </>
         ),
-        "p14": (
+        p14: (
             <>
                 <p>
                     Are you feeling dissociated, depersonalized, or derealized?
@@ -532,33 +836,43 @@ const Prompts = () => {
                     you are?
                 </p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p14.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["pg"]);
+                            pathHistory.push("p14");
+                        }}
+                    >
                         Yes, I'm dissociated.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p15"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p15"]);
+                            pathHistory.push("p14");
+                        }}
+                    >
                         No, I don't feel like that.
                     </a>
                 </div>
             </>
         ),
-        "p14.1": (
-            <>
-                <p></p>
-                <p></p>
-                <div>
-                    <a onClick={() => setPrompt(promptTexts[""])}></a>
-                    <a onClick={() => setPrompt(promptTexts[""])}></a>
-                </div>
-            </>
-        ),
-        "p15": (
+        p15: (
             <>
                 <p>Are you feeling depressed, sad, or upset?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["15.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p15.1"]);
+                            pathHistory.push("p15");
+                        }}
+                    >
                         Yes, I'm feeling depressed.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["16"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p16"]);
+                            pathHistory.push("p15");
+                        }}
+                    >
                         No, I'm not very depressed.
                     </a>
                 </div>
@@ -578,20 +892,35 @@ const Prompts = () => {
                     superhero, even if it doesn't feel like it.
                 </p>
 
-                <a onClick={() => setPrompt(promptTexts["16"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["16"]);
+                        pathHistory.push("p15.1");
+                    }}
+                >
                     Okay, I've done my best to take care of myself and I'm ready
                     for the next question.
                 </a>
             </>
         ),
-        "p16": (
+        p16: (
             <>
                 <p>Are you feeling lonely or in need of attention?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p16.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p16.1"]);
+                            pathHistory.push("p16");
+                        }}
+                    >
                         Yes, I'm feeling lonely.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p17"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p17"]);
+                            pathHistory.push("p16");
+                        }}
+                    >
                         No, I'm not very lonely. Next question!
                     </a>
                 </div>
@@ -615,20 +944,35 @@ const Prompts = () => {
                     general message on Facebook, Tumblr, Vent, or another
                     internet service, about whatever you want!
                 </p>
-                <a onClick={() => setPrompt(promptTexts["p17"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p17"]);
+                        pathHistory.push("p16.1");
+                    }}
+                >
                     Okay, I did my best to take care of myself and I'm ready for
                     the next question
                 </a>
             </>
         ),
-        "p17": (
+        p17: (
             <>
                 <p>Are you feeling foggy?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p17.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p17.1"]);
+                            pathHistory.push("p17");
+                        }}
+                    >
                         Yes, I feel foggy.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p18"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p18"]);
+                            pathHistory.push("p17");
+                        }}
+                    >
                         No, my head feels pretty clear.
                     </a>
                 </div>
@@ -639,10 +983,20 @@ const Prompts = () => {
                 <p>If you are feeling foggy, you might need some exercise.</p>
                 <p>Do you have the energy and ability to go for a walk?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p17.2"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p17.2"]);
+                            pathHistory.push("p17.1");
+                        }}
+                    >
                         Yes, a walk sounds great.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p17.3"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p17.3"]);
+                            pathHistory.push("p17.1");
+                        }}
+                    >
                         No, a walk would be too much for me.
                     </a>
                 </div>
@@ -657,7 +1011,12 @@ const Prompts = () => {
                     just taking a pleasant stroll. Enjoy it!
                 </p>
 
-                <a onClick={() => setPrompt(promptTexts["p18"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p18"]);
+                        pathHistory.push("p17.2");
+                    }}
+                >
                     Okay, I am back from my walk and I'm ready for the next
                     question.
                 </a>
@@ -684,20 +1043,35 @@ const Prompts = () => {
                     some fresh air!
                 </p>
 
-                <a onClick={() => setPrompt(promptTexts["p18"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p18"]);
+                        pathHistory.push("p17.3");
+                    }}
+                >
                     Okay, I did some exercise to the best of my ability. I'm
                     ready for the next question.
                 </a>
             </>
         ),
-        "p18": (
+        p18: (
             <>
                 <p>Do you have pets?</p>
                 <div>
-                    <a onClick={() => setPrompt(promptTexts["p18.1"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p18.1"]);
+                            pathHistory.push("p18");
+                        }}
+                    >
                         Yes, I've got animals in my house.
                     </a>
-                    <a onClick={() => setPrompt(promptTexts["p19"])}>
+                    <a
+                        onClick={() => {
+                            setPrompt(promptTexts["p19"]);
+                            pathHistory.push("p18");
+                        }}
+                    >
                         No, no pets for me!
                     </a>
                 </div>
@@ -713,12 +1087,17 @@ const Prompts = () => {
                     lizard...
                 </p>
 
-                <a onClick={() => setPrompt(promptTexts["p19"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p19"]);
+                        pathHistory.push("p18.1");
+                    }}
+                >
                     Good idea! I'm ready for the next question.
                 </a>
             </>
         ),
-        "p19": (
+        p19: (
             <>
                 <p>
                     Take half an hour and do whatever you want to do right now.
@@ -731,13 +1110,18 @@ const Prompts = () => {
                     feeding addictions or harming yourself or others.
                 </p>
 
-                <a onClick={() => setPrompt(promptTexts["p20"])}>
+                <a
+                    onClick={() => {
+                        setPrompt(promptTexts["p20"]);
+                        pathHistory.push("p19");
+                    }}
+                >
                     I did 30 minutes of fun and now I'm ready to move on to the
                     next step.
                 </a>
             </>
         ),
-        "p20": (
+        p20: (
             <>
                 <p>We've reached the end of this self care guide.</p>
                 <p>
@@ -755,7 +1139,6 @@ const Prompts = () => {
     };
 
     const [prompt, setPrompt] = useState(promptTexts["start"]);
-
     return <>{prompt}</>;
 };
 

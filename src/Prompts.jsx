@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Previous from "./assets/back-button.png";
 
 const pathHistory = [];
 
@@ -37,6 +38,15 @@ const Prompts = () => {
         ),
         p1: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Have you eaten in the past 6 hours?</p>
                 <div>
                     <a
@@ -68,6 +78,15 @@ const Prompts = () => {
         ),
         "p1.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     When you need a snack, just pop some easy food in your
                     mouth.
@@ -93,6 +112,15 @@ const Prompts = () => {
         ),
         "p1.2": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     You haven't eaten in a little while, and your body needs
                     fuel. It's time for breakfast, lunch, or dinner.
@@ -118,6 +146,15 @@ const Prompts = () => {
         ),
         p2: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Have you taken any medication you need to take?</p>
                 <div>
                     <a
@@ -141,6 +178,15 @@ const Prompts = () => {
         ),
         "p2.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Medication needs to be taken on schedule, or your body might
                     react negatively.
@@ -167,6 +213,15 @@ const Prompts = () => {
         ),
         p3: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Drink a glass of whatever liquid you like best. Water is
                     ideal, but don't beat yourself up if you'd rather have tea,
@@ -185,6 +240,15 @@ const Prompts = () => {
         ),
         p4: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Are you in pain?</p>
                 <div>
                     <a
@@ -208,6 +272,15 @@ const Prompts = () => {
         ),
         "p4.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     If there is something your doctor has prescribed you for
                     pain, you should take it or do it.
@@ -237,6 +310,15 @@ const Prompts = () => {
         ),
         p5: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Can you take a guess at how many hours you've slept out of
                     the last 24?
@@ -269,6 +351,15 @@ const Prompts = () => {
         ),
         "p5.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Take a nap. You can finish this self-care guide when you
                     wake up.
@@ -292,6 +383,15 @@ const Prompts = () => {
         ),
         p6: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Next we're going to deal with other types of physical
                     discomfort you may be in.
@@ -312,6 +412,15 @@ const Prompts = () => {
         ),
         p7: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Are your surroundings the right temperature?</p>
                 <div>
                     <a
@@ -343,6 +452,15 @@ const Prompts = () => {
         ),
         "p7.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     If you're too cold, you can try putting on some warm
                     clothes, using a space heater, turning up the heat in your
@@ -361,6 +479,15 @@ const Prompts = () => {
         ),
         "p7.2": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     If you're too cold, you can try putting on some warm
                     clothes, using a space heater, turning up the heat in your
@@ -379,6 +506,15 @@ const Prompts = () => {
         ),
         p8: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Are your surroundings dirty or smelly?</p>
                 <div>
                     <a
@@ -402,6 +538,15 @@ const Prompts = () => {
         ),
         "p8.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     It's hard to feel okay in an environment that is unfriendly
                     for whatever reason. If your surroundings aren't clean, set
@@ -425,6 +570,15 @@ const Prompts = () => {
         ),
         p9: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Do you feel unsafe because of the people, or lack of people,
                     in your surroundings?
@@ -460,6 +614,15 @@ const Prompts = () => {
         ),
         "p9.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     If you can, try to remove yourself from situations that are
                     overwhelming or feel unsafe. If you can't relocate entirely,
@@ -477,6 +640,15 @@ const Prompts = () => {
         ),
         "p9.2": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Being alone can feel really scary and unsafe. In reality, if
                     you take basic precautions, you're almost certainly fine!
@@ -497,6 +669,15 @@ const Prompts = () => {
         ),
         p10: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Does your body feel uncomfortable, sweaty, or dirty?</p>
                 <div>
                     <a
@@ -520,6 +701,15 @@ const Prompts = () => {
         ),
         "p10.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Do you have the energy and ability to take a shower?</p>
                 <a
                     onClick={() => {
@@ -533,6 +723,15 @@ const Prompts = () => {
         ),
         p11: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Now we've taken care of the physical reasons that you're not
                     feeling well. Now we're going to deal with the emotional
@@ -576,6 +775,15 @@ const Prompts = () => {
         ),
         "p11.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     It sounds like there's something on your mind! We're going
                     to do our best to take care of it.
@@ -603,6 +811,15 @@ const Prompts = () => {
         ),
         "p11.2": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Sometimes, we don't know the source of our bad feelings, and
                     that's okay. We're gonna work through this together!
@@ -619,6 +836,15 @@ const Prompts = () => {
         ),
         pg: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Here are some ideas for grounding activities:</p>
                 <ul>
                     <li>Take deep, calm breaths.</li>
@@ -658,26 +884,28 @@ const Prompts = () => {
                         experimenting!
                     </li>
                 </ul>
-                <a onClick={() => {
-                    let previousPage = pathHistory[pathHistory.length - 1];
-                    let nextPage = ""
-                    switch (previousPage) {
-                        case "p12.1":
-                            nextPage = "p13";
-                            break;
-                        case "p12.2":
-                            nextPage = "p13";
-                            break;
-                        case "p13.1":
-                            nextPage = "p14";
-                            break;
-                        case "p14":
-                            nextPage = "p15";
-                            break;
-                    }
-                    setPrompt(promptTexts[nextPage]);
-                    pathHistory.push("pg");
-                }}>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        let nextPage = "";
+                        switch (previousPage) {
+                            case "p12.1":
+                                nextPage = "p13";
+                                break;
+                            case "p12.2":
+                                nextPage = "p13";
+                                break;
+                            case "p13.1":
+                                nextPage = "p14";
+                                break;
+                            case "p14":
+                                nextPage = "p15";
+                                break;
+                        }
+                        setPrompt(promptTexts[nextPage]);
+                        pathHistory.push("pg");
+                    }}
+                >
                     Okay! I did one or more of these things, and I'm ready to
                     move on.
                 </a>
@@ -686,6 +914,15 @@ const Prompts = () => {
 
         p12: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p></p>
                 <div>
                     <a
@@ -717,6 +954,15 @@ const Prompts = () => {
         ),
         "p12.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     You're feeling anxious about something specific. That's
                     okay! Set a timer for 15 minutes and do something to take
@@ -749,6 +995,15 @@ const Prompts = () => {
         ),
         "p12.2": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     You feel generally anxious, but you don't know why. That's
                     okay!
@@ -766,6 +1021,15 @@ const Prompts = () => {
         ),
         p13: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Do you feel triggered? Are you having flashbacks? Is
                     something traumatic or upsetting from the past weighing on
@@ -793,6 +1057,15 @@ const Prompts = () => {
         ),
         "p13.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     If you're feeling triggered, see if there's a practical
                     action you can take to lessen your distress. Can you block
@@ -830,6 +1103,15 @@ const Prompts = () => {
         ),
         p14: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Are you feeling dissociated, depersonalized, or derealized?
                     Do you feel far away, foggy, or unreal? Are you not sure who
@@ -857,6 +1139,15 @@ const Prompts = () => {
         ),
         p15: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Are you feeling depressed, sad, or upset?</p>
                 <div>
                     <a
@@ -880,6 +1171,15 @@ const Prompts = () => {
         ),
         "p15.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Feeling depressed isn't fun, but it doesn't last forever!
                     Don't be mad or disappointed with yourself for feeling
@@ -905,6 +1205,15 @@ const Prompts = () => {
         ),
         p16: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Are you feeling lonely or in need of attention?</p>
                 <div>
                     <a
@@ -928,6 +1237,15 @@ const Prompts = () => {
         ),
         "p16.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Everybody feels lonely sometimes. If you're feeling lonely,
                     there's ways to reach out to people!
@@ -957,6 +1275,15 @@ const Prompts = () => {
         ),
         p17: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Are you feeling foggy?</p>
                 <div>
                     <a
@@ -980,6 +1307,15 @@ const Prompts = () => {
         ),
         "p17.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>If you are feeling foggy, you might need some exercise.</p>
                 <p>Do you have the energy and ability to go for a walk?</p>
                 <div>
@@ -1004,6 +1340,15 @@ const Prompts = () => {
         ),
         "p17.2": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Walks are really good for both our bodies and our minds.
                     Take a walk of whatever length you choose! You're not trying
@@ -1024,6 +1369,15 @@ const Prompts = () => {
         ),
         "p17.3": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>If you can't take a walk, that's okay!</p>
                 <p>Here are some alternatives:</p>
                 <ul>
@@ -1056,6 +1410,15 @@ const Prompts = () => {
         ),
         p18: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>Do you have pets?</p>
                 <div>
                     <a
@@ -1079,6 +1442,15 @@ const Prompts = () => {
         ),
         "p18.1": (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Playing with pets can be a great way to take the edge off
                     when you're not feeling well. It doesn't matter what kind of
@@ -1099,6 +1471,15 @@ const Prompts = () => {
         ),
         p19: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>
                     Take half an hour and do whatever you want to do right now.
                     This can be anything: crafts, watching TV, laying on the
@@ -1123,6 +1504,15 @@ const Prompts = () => {
         ),
         p20: (
             <>
+                <a
+                    onClick={() => {
+                        let previousPage = pathHistory[pathHistory.length - 1];
+                        setPrompt(promptTexts[previousPage]);
+                        pathHistory.pop();
+                    }}
+                >
+                    <img src={Previous} />
+                </a>
                 <p>We've reached the end of this self care guide.</p>
                 <p>
                     It's time to reassess. Maybe now that you've done all this

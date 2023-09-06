@@ -44,3 +44,13 @@ div div {
   display: flex;
   flex-direction: column;
 }
+
+img {
+  height: 50px;
+  width: 50px;
+  transition-duration: .4s
+}
+
+img:hover {
+  opacity: .3;
+}

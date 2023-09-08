@@ -1194,7 +1194,7 @@ const Prompts = () => {
 
                 <a
                     onClick={() => {
-                        setPrompt(promptTexts["16"]);
+                        setPrompt(promptTexts["p16"]);
                         pathHistory.push("p15.1");
                     }}
                 >
